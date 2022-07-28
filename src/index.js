@@ -22,7 +22,8 @@ module.exports = function check(str, bracketsConfig) {
 
     if (stack.length === 0) {
       stack.push(curSymbol);
-    } else if (closeBrackets.includes(curSymbol)) {
+    } else if (closeBrackets.includes(curSymbol) && topElem === bracketsPairObj[curSymbol]) {
+      
       stack.pop()
     } else {
       stack.push(curSymbol);
